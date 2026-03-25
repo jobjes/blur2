@@ -71,13 +71,6 @@ video {
   animation-delay: 0.5s;
 }
 
-@keyframes fadeInLogo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ===========================
    Event aankondiging
    =========================== */
@@ -102,13 +95,7 @@ video {
   transform: translateY(20px);
   animation: fadeInButton 1.5s forwards;
   animation-delay: 1.5s;
-}
 
-@keyframes fadeInButton {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ===========================
