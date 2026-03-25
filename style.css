@@ -25,22 +25,25 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.video-container {
   z-index: -2;
 }
 
 .overlay {
-  background: none; /* geen grijze overlay */
+  background: none; /* geen overlaykleur */
   z-index: -1;
 }
 
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* altijd fullscreen */
 }
 
 /* ===========================
-   Content bovenop video
+   Centraal gecentreerde content
    =========================== */
 .content {
   position: fixed;
@@ -50,19 +53,19 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; /* ruimte tussen logo, aankondiging en knop */
+  gap: 30px; /* ruimte tussen logo, aankondiging, knop */
   z-index: 1;
 }
 
 /* Logo */
 .logo {
   width: 220px;
-  margin-bottom: 40px; /* extra ruimte onder logo */
+  margin-bottom: 20px;
 }
 
-/* Event aankondiging PNG */
+/* Event aankondiging */
 .event {
-  width: 250px; /* desktop */
+  width: 250px;
 }
 
 /* SUN ALERT knop */
@@ -134,7 +137,7 @@ footer {
   .event {
     width: 200px;
   }
-  
+
   .logo {
     width: 180px;
     margin-bottom: 15px;
