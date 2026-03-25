@@ -1,6 +1,4 @@
-/* ===========================
-   Algemene reset en fullscreen
-   =========================== */
+/* Reset en fullscreen */
 html, body {
   margin: 0;
   padding: 0;
@@ -16,9 +14,7 @@ html, body {
   --vh: 1vh;
 }
 
-/* ===========================
-   Video en overlay
-   =========================== */
+/* Video en overlay */
 .video-container, .overlay {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
@@ -32,19 +28,17 @@ html, body {
 }
 
 .overlay {
-  background: none; /* geen overlaykleur */
+  background: none;
   z-index: -1;
 }
 
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* altijd fullscreen */
+  object-fit: cover;
 }
 
-/* ===========================
-   Centraal gecentreerde content
-   =========================== */
+/* Centraal content */
 .content {
   position: fixed;
   top: 50%;
@@ -53,7 +47,7 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; /* ruimte tussen logo, aankondiging, knop */
+  gap: 30px;
   z-index: 1;
 }
 
@@ -77,9 +71,7 @@ video {
   font-size: 16px;
 }
 
-/* ===========================
-   Popup form
-   =========================== */
+/* Popup */
 .popup {
   position: fixed;
   width: 100%;
@@ -119,9 +111,7 @@ input {
   cursor: pointer;
 }
 
-/* ===========================
-   Footer
-   =========================== */
+/* Footer */
 footer {
   position: fixed;
   bottom: 20px;
@@ -130,24 +120,19 @@ footer {
   z-index: 1;
 }
 
-/* ===========================
-   Responsive voor mobiel
-   =========================== */
+/* Responsive mobiel */
 @media (max-width: 768px) {
   .event {
     width: 200px;
   }
-
   .logo {
     width: 180px;
     margin-bottom: 15px;
   }
-
   .alertButton {
     font-size: 14px;
     padding: 12px 30px;
   }
-
   .popupContent {
     width: 220px;
   }
