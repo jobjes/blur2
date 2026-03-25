@@ -15,3 +15,10 @@ window.onclick = function(event) {
     closeForm();
   }
 };
+// iOS / mobiele viewport fix
+function setVh() {
+  document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+}
+
+window.addEventListener('resize', setVh);
+setVh();
