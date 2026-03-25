@@ -1,19 +1,36 @@
-/* Algemeen */
-body {
+/* ===========================
+   Algemene reset en fullscreen
+   =========================== */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
   color: white;
-  overflow-x: hidden;
+  background: black;
 }
 
-/* Video achtergrond */
-.video-container {
+/* Variabele vh voor iOS / mobiele fix */
+:root {
+  --vh: 1vh;
+}
+
+/* ===========================
+   Video en overlay
+   =========================== */
+.video-container, .overlay {
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: -2;
+}
+
+.overlay {
+  background: none; /* geen grijze overlay */
+  z-index: -1;
 }
 
 video {
@@ -22,18 +39,9 @@ video {
   object-fit: cover;
 }
 
-/* Dark overlay boven video */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  z-index: -1;
-}
-
-/* Content bovenop video */
+/* ===========================
+   Content bovenop video
+   =========================== */
 .content {
   position: fixed;
   top: 50%;
@@ -42,35 +50,38 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px; /* ruimte tussen logo, aankondiging en knop */
   z-index: 1;
 }
 
+/* Logo */
 .logo {
   width: 220px;
-  margin-bottom: 60px; /* meer ruimte tussen logo en aankondiging */
+  margin-bottom: 40px; /* extra ruimte onder logo */
 }
 
+/* Event aankondiging PNG */
 .event {
-  width: 250px;
+  width: 250px; /* desktop */
 }
 
+/* SUN ALERT knop */
 .alertButton {
   padding: 15px 40px;
   background: white;
-  color: black;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
 }
 
-/* Popup form */
+/* ===========================
+   Popup form
+   =========================== */
 .popup {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.8);
   display: none;
   justify-content: center;
   align-items: center;
@@ -78,42 +89,36 @@ video {
 }
 
 .popupContent {
-  background: #111;
+  background: black;
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 280px;
-  border-radius: 8px;
-  text-align: center;
+  width: 260px;
 }
 
-.popupContent input {
+input {
   padding: 12px;
   border: none;
-  border-radius: 4px;
 }
 
-.popupContent .submit {
+.submit {
   padding: 15px;
   background: white;
-  color: black;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
 }
 
-.popupContent .close {
+.close {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  margin-top: 5px;
-  font-size: 14px;
 }
 
-/* Footer */
+/* ===========================
+   Footer
+   =========================== */
 footer {
   position: fixed;
   bottom: 20px;
@@ -122,28 +127,25 @@ footer {
   z-index: 1;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Responsive */
+/* ===========================
+   Responsive voor mobiel
+   =========================== */
 @media (max-width: 768px) {
-  .logo {
-    width: 180px;
-  }
-
   .event {
     width: 200px;
   }
+  
+  .logo {
+    width: 180px;
+    margin-bottom: 15px;
+  }
 
   .alertButton {
-    padding: 12px 30px;
     font-size: 14px;
+    padding: 12px 30px;
   }
 
   .popupContent {
-    width: 90%;
-    padding: 20px;
+    width: 220px;
   }
 }
