@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blur Event</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Video achtergrond -->
+<div class="video-container">
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="assets/video/desktop.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- Dark overlay -->
+<div class="overlay"></div>
+
+<!-- Content bovenop video -->
+<div class="content">
+  <img src="https://via.placeholder.com/300x120?text=LOGO" class="logo" alt="Logo">
+  <img src="https://via.placeholder.com/250x80?text=NEXT+EVENT+DATE" class="event" alt="Next Event Date">
+  <button class="alertButton" onclick="openForm()">SUN ALERT</button>
+</div>
+
+<!-- Popup Form -->
+<div class="popup" id="popup">
+  <div class="popupContent">
+    <h2>SUN ALERT</h2>
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Phone">
+    <button class="submit">Notify me</button>
+    <button class="close" onclick="closeForm()">Close</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <a href="https://www.instagram.com/blur_event/?g=5" target="_blank">
+    Instagram
+  </a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

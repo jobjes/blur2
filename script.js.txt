@@ -1,0 +1,11 @@
+function openForm(){
+
+document.getElementById("popup").style.display="flex";
+
+}
+
+function closeForm(){
+
+document.getElementById("popup").style.display="none";
+
+}
