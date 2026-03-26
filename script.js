@@ -18,4 +18,3 @@ window.onclick = function(event) {
 window.addEventListener("load", function() {
     document.body.classList.add("loaded");
 });
-};
