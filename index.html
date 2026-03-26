@@ -5,28 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Blur Event</title>
 <link rel="stylesheet" href="style.css">
-
-<!-- Luxury font -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Video achtergrond -->
-<div class="video-container">
-  <video autoplay muted loop playsinline>
+<div class="fullscreen-wrapper">
+  <video autoplay muted loop playsinline class="bg-video">
     <source src="assets/video/desktop.mp4" media="(min-width:768px)">
     <source src="assets/video/mobile.mp4">
   </video>
+
+  <div class="content">
+    <img src="assets/images/logo.png" class="logo" alt="Logo">
+    <img src="assets/images/aankondiging.png" class="event" alt="Next Event">
+    <button class="alertButton" onclick="openForm()">SUN ALERT</button>
+  </div>
 </div>
 
-<!-- Content -->
-<div class="content">
-  <img src="assets/images/logo.png" class="logo" alt="Logo">
-  <img src="assets/images/aankondiging.png" class="event" alt="Next Event">
-  <button class="alertButton" onclick="openForm()">SUN ALERT</button>
-</div>
-
-<!-- Popup Form -->
 <div class="popup" id="popup">
   <div class="popupContent">
     <h2>SUN ALERT</h2>
@@ -40,7 +35,6 @@
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
   <a href="https://www.instagram.com/blur_event/?g=5" target="_blank">@blur_event</a>
 </footer>
