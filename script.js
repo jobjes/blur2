@@ -1,25 +1,32 @@
-// Open popup
+// Mobiele viewport fix
+function setFullHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+window.addEventListener('resize', setFullHeight);
+setFullHeight();
+
+// Popup functies
 function openForm() {
   document.getElementById("popup").classList.add("active");
 }
 
-// Close popup
 function closeForm() {
   document.getElementById("popup").classList.remove("active");
 }
 
-// Click outside popup to close
+// Click outside popup sluit
 window.addEventListener("click", function(event) {
   const popup = document.getElementById("popup");
   if (event.target === popup) closeForm();
 });
 
-// ESC key to close popup
+// ESC key sluit popup
 document.addEventListener("keydown", function(event) {
   if(event.key === "Escape") closeForm();
 });
 
-// Form submit
+// Form submit simulatie
 document.getElementById("notifyForm").addEventListener("submit", function(e){
   e.preventDefault();
   const button = this.querySelector(".submit");
