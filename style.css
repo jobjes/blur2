@@ -146,22 +146,4 @@ footer a {
     width: 90%;
     padding: 20px;
   }
-  /* ===========================
-   Site fade-in (werkt op iPhone)
-   =========================== */
-
-body {
-  opacity: 0;
 }
-
-body.loaded {
-  animation: siteFade 1.3s ease forwards;
-}
-
-@keyframes siteFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
