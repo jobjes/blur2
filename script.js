@@ -8,22 +8,18 @@ function closeForm() {
   document.getElementById("popup").classList.remove("active");
 }
 
-// Close popup on click outside
+// Click outside popup to close
 window.addEventListener("click", function(event) {
   const popup = document.getElementById("popup");
-  if (event.target === popup) {
-    closeForm();
-  }
+  if (event.target === popup) closeForm();
 });
 
-// Close popup with ESC key
+// ESC key to close popup
 document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeForm();
-  }
+  if(event.key === "Escape") closeForm();
 });
 
-// Form submission with success message
+// Form submit
 document.getElementById("notifyForm").addEventListener("submit", function(e){
   e.preventDefault();
   const button = this.querySelector(".submit");
