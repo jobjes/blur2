@@ -14,4 +14,8 @@ window.onclick = function(event) {
   if (event.target === popup) {
     closeForm();
   }
+  // Site fade-in trigger (mobile safe)
+window.addEventListener("load", function() {
+    document.body.classList.add("loaded");
+});
 };
