@@ -297,5 +297,22 @@ width:170px;
 width:200px;
 
 }
+/* Mobile fullscreen fix */
+@media (max-width:768px){
+
+.bg-video{
+
+height:100vh;
+height:100dvh; /* nieuwe mobile viewport unit */
+
+}
+
+@media(max-width:768px){
+
+.content{
+
+width:90%;
+
+}
 
 }
