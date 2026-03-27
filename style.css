@@ -1,5 +1,3 @@
-/* Basis */
-
 body{
 
 margin:0;
@@ -9,8 +7,6 @@ font-family:Montserrat,sans-serif;
 color:white;
 
 background:black;
-
-overflow:hidden;
 
 }
 
@@ -56,21 +52,35 @@ align-items:center;
 
 gap:20px;
 
-animation:fade 2.5s ease;
-
 }
 
+
+/* Logo animation */
 
 .logo{
 
 width:220px;
 
+opacity:0;
+
+transform:translateY(40px);
+
+animation:slideUp 2s ease .6s forwards;
+
 }
 
+
+/* Event animation */
 
 .event{
 
 width:250px;
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:slideUp 2s ease .9s forwards;
 
 }
 
@@ -92,6 +102,12 @@ font-weight:600;
 border-radius:8px;
 
 cursor:pointer;
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:slideUp 2s ease 1.2s forwards;
 
 transition:.3s;
 
@@ -243,13 +259,25 @@ text-decoration:none;
 }
 
 
-/* Animatie */
+/* Animations */
 
-@keyframes fade{
+@keyframes slideUp{
 
-from{opacity:0;}
+from{
 
-to{opacity:1;}
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
