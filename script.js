@@ -1,46 +1,42 @@
-function openForm(){
+// Popup open/close
+const popup = document.getElementById("popup");
 
-document.getElementById("popup").classList.add("active");
-
+function openForm() {
+    popup.classList.add("active");
 }
 
-
-function closeForm(){
-
-document.getElementById("popup").classList.remove("active");
-
+function closeForm() {
+    popup.classList.remove("active");
 }
 
+window.addEventListener("click", (event) => {
+    if(event.target === popup){
+        closeForm();
+    }
+});
 
-window.onclick=function(event){
+// Form handling
+const notifyForm = document.getElementById("notifyForm");
+const successMessage = document.getElementById("successMessage");
 
-let popup=document.getElementById("popup");
+notifyForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const button = notifyForm.querySelector(".submit");
+    button.disabled = true;
+    button.innerText = "Loading...";
 
-if(event.target==popup){
+    setTimeout(() => {
+        button.innerText = "Added ✓";
+        successMessage.innerText = "You're on the list!";
+        
+        // Reset form na 2 seconden
+        setTimeout(() => {
+            notifyForm.reset();
+            button.disabled = false;
+            button.innerText = "Notify me";
+            successMessage.innerText = "";
+            closeForm();
+        }, 2000);
 
-closeForm();
-
-}
-
-};
-
-
-document.getElementById("notifyForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let button=this.querySelector(".submit");
-
-button.innerText="Loading...";
-
-
-setTimeout(()=>{
-
-button.innerText="Added ✓";
-
-document.getElementById("successMessage").innerText="You're on the list";
-
-},1000);
-
-
+    }, 1000);
 });
