@@ -22,7 +22,7 @@
 
     <!-- Knop + call image in wrapper -->
     <div class="alertWrapper">
-        <button type="button" class="alertButton" onclick="openForm()">
+        <button type="button" class="alertButton" id="blurButton">
             BLUR ALERT
         </button>
         <img src="assets/images/call.png" alt="Call text" class="callImage">
@@ -41,7 +41,7 @@
             title="Blur Event Form"
         ></iframe>
 
-        <button class="close" onclick="closeForm()">Close</button>
+        <button class="close" id="popupClose">Close</button>
     </div>
 </div>
 
@@ -52,16 +52,8 @@
     </a>
 </footer>
 
-<!-- Script voor popup -->
-<script>
-function openForm() {
-    document.getElementById("popup").style.display = "flex"; // flex voor centrering
-}
-
-function closeForm() {
-    document.getElementById("popup").style.display = "none";
-}
-</script>
+<!-- Script -->
+<script src="script.js"></script>
 
 </body>
 </html>
