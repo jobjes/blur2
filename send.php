@@ -21,7 +21,7 @@ $data = [
 
 // API key en endpoint
 $apiKey = "hvcoFWVDFI0gKvtMEt6G5jCBqSOhyIre"; // jouw blur koppeling
-$endpoint = "https://app.relationcity.io/api/contacts"; // controleer endpoint in API docs
+$endpoint = "https://app.relationcity.io/api/v1/contacts";
 
 // CURL request
 $ch = curl_init($endpoint);
