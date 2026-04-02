@@ -4,26 +4,32 @@ if(!empty($_POST['website'])){
     exit("Bot detected");
 }
 
-// Inputs ophalen
+// Inputs ophalen en schoonmaken
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$phone = preg_replace('/[^0-9+]/', '', $_POST['phone']);
+$phone = preg_replace('/[^0-9]/', '', $_POST['phone']); // alleen cijfers
 
 // Input validatie
 if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($phone) < 8){
     exit("Ongeldige invoer");
 }
 
-// RelationCity API data
+// Stel landcode NL in
+$countryCode = "31";
+
+// Data voor RelationCity API
 $data = [
+    "name" => "", // optioneel
+    "mobileNumber" => $phone,
+    "msisdn" => $countryCode.$phone, // altijd +31
     "email" => $email,
-    "phone" => $phone
+    "tags" => ["blur"] // voeg jouw tag ID toe
 ];
 
 // API key en endpoint
-$apiKey = "hvcoFWVDFI0gKvtMEt6G5jCBqSOhyIre"; // jouw blur koppeling
+$apiKey = "hvcoFWVDFI0gKvtMEt6G5jCBqSOhyIre";
 $endpoint = "https://app.relationcity.io/api/v1/contacts";
 
-// CURL request
+// CURL request opzetten
 $ch = curl_init($endpoint);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -33,6 +39,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
+// Request uitvoeren
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
