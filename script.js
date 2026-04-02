@@ -1,4 +1,21 @@
+// --- Popup logica ---
+const popup = document.getElementById("popup");
+const openBtn = document.getElementById("blurButton");
+const closeBtn = document.getElementById("popupClose");
+
+openBtn.addEventListener("click", () => {
+    popup.style.display = "flex"; // flex zorgt voor centrering
+});
+
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+// --- Jaco-script / extra functionaliteit ---
+// Plaats hier alle eerdere functies of animaties van je oude script.js
+// Bijvoorbeeld: console.log('Jaco script geladen');
 // Popup open/close
+
 const popup = document.getElementById("popup");
 
 function openForm() {
