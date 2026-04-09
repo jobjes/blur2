@@ -1,12 +1,10 @@
-// Popup element ophalen
+// Popup open/close
 const popup = document.getElementById("popup");
 
-// Open popup
 function openForm() {
     popup.classList.add("active");
 }
 
-// Sluit popup
 function closeForm() {
     popup.classList.remove("active");
 }
@@ -15,5 +13,22 @@ function closeForm() {
 window.addEventListener("click", (event) => {
     if (event.target === popup) {
         closeForm();
+    }
+});
+
+// ==============================
+// RelationCity form validatie
+// ==============================
+const rcFormWrapper = document.getElementById("rc_69ce9744ef9a9fdb61");
+
+rcFormWrapper.addEventListener("submit", function(e){
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]');
+    const name = form.querySelector('input[type="text"]'); // pas aan als jouw veld anders heet
+
+    if (!email.value.trim() || !name.value.trim()) {
+        e.preventDefault();
+        alert("Vul alle velden in voordat je registreert!");
+        return false;
     }
 });
