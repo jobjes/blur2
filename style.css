@@ -45,15 +45,15 @@ body{
     animation:slideUp 2s ease .9s forwards;
 }
 
-/* Knop wrapper (centreren knop + call image) */
+/* Knop wrapper */
 .alertWrapper {
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px; /* ruimte tussen knop en afbeelding */
+    gap:10px;
 }
 
-/* Knop animatie */
+/* Hoofd knop */
 .alertButton{
     padding:14px 34px;
     background:white;
@@ -75,7 +75,7 @@ body{
     transform:scale(1.05);
 }
 
-/* Call image animatie */
+/* Call image */
 .callImage {
     width:140px;
     max-width:90%;
@@ -85,9 +85,13 @@ body{
     animation:slideUp 2s ease 1.5s forwards;
 }
 
-/* Popup styling */
+/* =========================
+   POPUP FIX (BELANGRIJK)
+========================= */
 .popup{
     position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
     display:flex;
@@ -99,6 +103,7 @@ body{
     visibility:hidden;
     transition:.3s;
     pointer-events:none;
+    padding:20px; /* voorkomt rand-problemen mobiel */
 }
 
 .popup.active{
@@ -114,17 +119,32 @@ body{
     border-radius:12px;
     display:flex;
     flex-direction:column;
-    gap:10px;
-    width:260px;
+    gap:15px;
+
+    width:100%;
+    max-width:420px; /* 🔥 belangrijkste fix */
+
+    max-height:80vh;
+    overflow-y:auto;
+
     text-align:center;
 }
 
+/* Titel */
+.popupContent h2{
+    margin:0;
+    margin-bottom:5px;
+    letter-spacing:1px;
+}
+
+/* Inputs (voor als embed ze gebruikt) */
 .popupContent input{
-    padding:10px;
+    padding:12px;
     border:none;
     border-radius:6px;
     background:rgba(255,255,255,.1);
     color:white;
+    width:100%;
 }
 
 .popupContent input:focus{
@@ -132,20 +152,38 @@ body{
     background: rgba(255,255,255,0.15);
 }
 
+/* Submit knop (nu in jouw style) */
 .submit{
-    padding:12px;
+    padding:14px;
     background:white;
     color:black;
     border:none;
-    border-radius:6px;
+    border-radius:8px;
+    font-weight:600;
     cursor:pointer;
+    transition:.3s;
+    width:100%;
 }
 
+.submit:hover{
+    background:black;
+    color:white;
+    box-shadow:0 0 15px white;
+    transform:scale(1.03);
+}
+
+/* Close knop */
 .close{
     background:none;
     border:none;
     color:white;
     cursor:pointer;
+    opacity:.7;
+    transition:.2s;
+}
+
+.close:hover{
+    opacity:1;
 }
 
 /* Footer */
@@ -174,7 +212,7 @@ footer a{
     }
 }
 
-/* Mobile styling */
+/* Mobile */
 @media (max-width:768px){
     .logo { width:170px; }
     .event { width:200px; }
@@ -182,4 +220,9 @@ footer a{
     .content { width:90%; }
     .alertButton { padding:12px 28px; }
     .callImage { width:120px; }
+
+    .popupContent{
+        padding:20px;
+        max-width:100%;
+    }
 }
