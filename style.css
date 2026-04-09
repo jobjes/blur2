@@ -86,7 +86,7 @@ body{
 }
 
 /* =========================
-   POPUP FIX (BELANGRIJK)
+   POPUP STYLING
 ========================= */
 .popup{
     position:fixed;
@@ -103,7 +103,7 @@ body{
     visibility:hidden;
     transition:.3s;
     pointer-events:none;
-    padding:20px; /* voorkomt rand-problemen mobiel */
+    padding:20px;
 }
 
 .popup.active{
@@ -120,13 +120,10 @@ body{
     display:flex;
     flex-direction:column;
     gap:15px;
-
     width:100%;
-    max-width:420px; /* 🔥 belangrijkste fix */
-
+    max-width:420px;
     max-height:80vh;
     overflow-y:auto;
-
     text-align:center;
 }
 
@@ -137,39 +134,47 @@ body{
     letter-spacing:1px;
 }
 
-/* Inputs (voor als embed ze gebruikt) */
-.popupContent input{
+/* =========================
+   RelationCity FORM STYLING
+========================= */
+#rc_69ce9744ef9a9fdb61 form {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#rc_69ce9744ef9a9fdb61 input[type="text"],
+#rc_69ce9744ef9a9fdb61 input[type="email"] {
     padding:12px;
+    border-radius:8px;
     border:none;
-    border-radius:6px;
-    background:rgba(255,255,255,.1);
+    background: rgba(255,255,255,0.1);
     color:white;
     width:100%;
 }
 
-.popupContent input:focus{
-    outline:2px solid white;
-    background: rgba(255,255,255,0.15);
+#rc_69ce9744ef9a9fdb61 input[type="text"]::placeholder,
+#rc_69ce9744ef9a9fdb61 input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.7);
 }
 
-/* Submit knop (nu in jouw style) */
-.submit{
+#rc_69ce9744ef9a9fdb61 input[type="submit"] {
     padding:14px;
     background:white;
     color:black;
+    font-weight:600;
     border:none;
     border-radius:8px;
-    font-weight:600;
     cursor:pointer;
     transition:.3s;
     width:100%;
 }
 
-.submit:hover{
+#rc_69ce9744ef9a9fdb61 input[type="submit"]:hover {
     background:black;
     color:white;
-    box-shadow:0 0 15px white;
     transform:scale(1.03);
+    box-shadow:0 0 15px white;
 }
 
 /* Close knop */
